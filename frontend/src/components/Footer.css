@@ -1,0 +1,58 @@
+.footer {
+    width: 100%;
+    height: 100px; /* New height */
+    padding-top: 0px; /* New padding */
+    padding-bottom: 25px; /* New padding */
+    background-color: rgba(255, 255, 255, 0.9); /* White background with opacity */
+    text-align: center;
+    border-top-width: 0px; /* New border property */
+    border-top-style: solid; /* Keep style if width is 0, or remove border-top entirely */
+    border-color: #ddd; /* Keep color if style is solid */
+}
+
+/* On mobile, adjust padding */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 0;
+    }
+}
+
+.footer-title {
+    margin-bottom: 15px;
+    color: #333; /* Darker color for readability */
+}
+
+.image-cards-container {
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center;
+    gap: 1px; /* Margin/Padding as requested */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    padding: 1px; /* Padding as requested */
+}
+
+.image-cards-container .image-card {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    /* border: none !important; Removed as it's not needed */
+    width: 150px; /* New size */
+    height: 150px; /* New size */
+    margin: 1px; /* Margin as requested */
+}
+
+.image-cards-container .image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .image-cards-container {
+        flex-direction: column; /* Stack vertically */
+        gap: 10px; /* Adjust gap for vertical stacking */
+    }
+    .image-cards-container .image-card {
+        margin: 5px 0; /* Adjust margin for vertical stacking */
+    }
+}
