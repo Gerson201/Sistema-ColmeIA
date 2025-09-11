@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Sistema-ColmeIA/static/css/main.44042745.css",
-    "main.js": "/Sistema-ColmeIA/static/js/main.e1a52613.js",
+    "main.js": "/Sistema-ColmeIA/static/js/main.45447022.js",
     "static/js/453.6086bab4.chunk.js": "/Sistema-ColmeIA/static/js/453.6086bab4.chunk.js",
     "static/media/Tela de Fundo do sistema.png": "/Sistema-ColmeIA/static/media/Tela de Fundo do sistema.079a28ed322149c7a3d3.png",
     "static/media/PPGMCS.png": "/Sistema-ColmeIA/static/media/PPGMCS.bf4f36f8516d69fd54ff.png",
@@ -11,11 +11,11 @@
     "static/media/Unimontes.png": "/Sistema-ColmeIA/static/media/Unimontes.9900210133a52b4e7561.png",
     "index.html": "/Sistema-ColmeIA/index.html",
     "main.44042745.css.map": "/Sistema-ColmeIA/static/css/main.44042745.css.map",
-    "main.e1a52613.js.map": "/Sistema-ColmeIA/static/js/main.e1a52613.js.map",
+    "main.45447022.js.map": "/Sistema-ColmeIA/static/js/main.45447022.js.map",
     "453.6086bab4.chunk.js.map": "/Sistema-ColmeIA/static/js/453.6086bab4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.44042745.css",
-    "static/js/main.e1a52613.js"
+    "static/js/main.45447022.js"
   ]
 }
