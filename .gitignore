@@ -1,37 +1,70 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+mobile/node_modules/
+
+# Production builds
+frontend/build/
+mobile/dist/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Django
-*.log
-*.pot
-*.pyc
-*.pyo
-*.sqlite3
-/db.sqlite3
-/media/
-/staticfiles/
-
-# Env
-.env
-.env.*
-*.env
-
-# Firebase credentials
-firebase-credentials.json
-
-# Node/React
-node_modules/
+*.so
+.Python
 build/
+develop-eggs/
 dist/
-.cache/
-coverage/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Editor/OS
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Database
+*.sqlite3
+*.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
 Thumbs.db
-*.swp
-.idea/
-.vscode/
 
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Firebase credentials (keep secure)
+firebase-credentials.json
+
+# Temporary files
+*.tmp
+*.temp
