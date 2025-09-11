@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Sistema-ColmeIA/static/css/main.44042745.css",
+    "main.js": "/Sistema-ColmeIA/static/js/main.90d4130c.js",
+    "static/js/453.6086bab4.chunk.js": "/Sistema-ColmeIA/static/js/453.6086bab4.chunk.js",
+    "static/media/Tela de Fundo do sistema.png": "/Sistema-ColmeIA/static/media/Tela de Fundo do sistema.079a28ed322149c7a3d3.png",
+    "static/media/PPGMCS.png": "/Sistema-ColmeIA/static/media/PPGMCS.bf4f36f8516d69fd54ff.png",
+    "static/media/Icone de Colmeia.png": "/Sistema-ColmeIA/static/media/Icone de Colmeia.da950d3eadafd67d0d92.png",
+    "static/media/Sertao_Mineiro.png": "/Sistema-ColmeIA/static/media/Sertao_Mineiro.ab44d534b0ac90524011.png",
+    "static/media/Fapemig.png": "/Sistema-ColmeIA/static/media/Fapemig.d8492b4453b72aa2c5db.png",
+    "static/media/Unimontes.png": "/Sistema-ColmeIA/static/media/Unimontes.9900210133a52b4e7561.png",
+    "index.html": "/Sistema-ColmeIA/index.html",
+    "main.44042745.css.map": "/Sistema-ColmeIA/static/css/main.44042745.css.map",
+    "main.90d4130c.js.map": "/Sistema-ColmeIA/static/js/main.90d4130c.js.map",
+    "453.6086bab4.chunk.js.map": "/Sistema-ColmeIA/static/js/453.6086bab4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44042745.css",
+    "static/js/main.90d4130c.js"
+  ]
+}
