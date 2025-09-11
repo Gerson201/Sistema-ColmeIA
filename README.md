@@ -111,3 +111,4 @@ ID:10;TS:2025-09-10 21:45:20;Freq:1406.25;Mag:154.88;Temp1:25.9;Hum1:44.0;Peso:2
 ---
 
 **Sistema ColmeIA v2.0** - Desenvolvido para monitoramento inteligente de colmeias 🐝
+Sistema desenvolvido sobre orientação do Professor Maurílio José Inácio, e Orientados Gerson Santos, Josué,Izadora,João.
