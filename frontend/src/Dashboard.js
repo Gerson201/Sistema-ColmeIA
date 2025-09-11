@@ -5,7 +5,7 @@ import DataCard from './components/DataCard';
 import HistoricalGraphModal from './components/HistoricalGraphModal';
 import beehiveIcon from './assets/images/Icone de Colmeia.png'; // New import
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://sistema-colmeia-backend-246385838672.us-central1.run.app';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || ' https://sistema-colmeia-backend-246385838672.us-central1.run.app';
 const API_URL = API_BASE_URL + '/api/data/';
 
 // This function will parse the semicolon-separated string into an object
