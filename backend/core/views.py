@@ -11,6 +11,15 @@ from firebase_admin import db
 from datetime import datetime
 import statistics
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def test_view(request):
+    return Response({'status': 'success', 'message': 'Backend funcionando!'}, status=status.HTTP_200_OK)
+
+def simple_test(request):
+    from django.http import JsonResponse
+    return JsonResponse({'status': 'ok', 'message': 'Simple test working'})
+
 def parse_reading_string(reading_string):
     all_parsed_readings = []
     individual_reading_segments = reading_string.split('|')

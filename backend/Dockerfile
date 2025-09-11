@@ -27,5 +27,5 @@ EXPOSE 8080
 ENV PORT=8080
 ENV PYTHONPATH=/app
 
-# Run the application
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 backend.wsgi:application
+# Run migrations and start the application
+CMD python setup_cloud_run.py && exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 wsgi:application
