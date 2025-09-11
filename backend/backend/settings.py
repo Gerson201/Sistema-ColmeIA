@@ -158,16 +158,4 @@ SECURE_HSTS_PRELOAD = not DEBUG
 SECURE_REFERRER_POLICY = 'same-origin'
 X_FRAME_OPTIONS = 'DENY'
 
-# Firebase Admin SDK Init (usar caminho de credenciais via env)
-import firebase_admin
-from firebase_admin import credentials
-
-GOOGLE_CREDENTIALS_PATH = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
-FIREBASE_DB_URL = os.getenv('FIREBASE_DB_URL')
-
-if GOOGLE_CREDENTIALS_PATH and os.path.exists(GOOGLE_CREDENTIALS_PATH):
-    if not firebase_admin._apps:
-        cred = credentials.Certificate(GOOGLE_CREDENTIALS_PATH)
-        firebase_admin.initialize_app(cred, {
-            'databaseURL': FIREBASE_DB_URL
-        })
+# Firebase será inicializado dinamicamente nas views quando necessário

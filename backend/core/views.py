@@ -61,18 +61,25 @@ def login_view(request):
 @permission_classes([IsAuthenticated])
 def data_view(request):
     try:
+        # Inicializa o Firebase se não estiver inicializado
         if not firebase_admin._apps:
-            if getattr(settings, 'DEMO_MODE', False):
-                # Retorna dados simulados em modo demo
-                return Response({
-                    "leituras_esp32": {
-                        "device_001": {
-                            "timestamp": "2025-09-10 11:00:00",
-                            "leituras": ["ID:10;TS:2025-09-10 19:45:01;Freq:140.62;Mag:151.23;Temp1:24.5;Hum1:48.0;Peso:-6.79;Temp2:24.4;Hum2:44.3"]
-                        }
-                    }
-                }, status=status.HTTP_200_OK)
-            return Response({'error': 'Firebase não configurado. Defina GOOGLE_APPLICATION_CREDENTIALS e FIREBASE_DB_URL no ambiente.'}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+            import os
+            from firebase_admin import credentials
+            
+            # Caminho para o arquivo de credenciais - primeiro tenta no diretório backend
+            cred_path = os.path.join(os.path.dirname(__file__), '..', 'firebase-credentials.json')
+            if not os.path.exists(cred_path):
+                # Se não encontrar, tenta no diretório pai
+                cred_path = os.path.join(os.path.dirname(__file__), '..', '..', 'firebase-credentials.json')
+            
+            if os.path.exists(cred_path):
+                cred = credentials.Certificate(cred_path)
+                firebase_admin.initialize_app(cred, {
+                    'databaseURL': 'https://colmeia-bfabc-default-rtdb.firebaseio.com/'
+                })
+            else:
+                return Response({'error': 'Arquivo de credenciais do Firebase não encontrado.'}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+        
         ref = db.reference('leituras_esp32')
         firebase_data = ref.order_by_key().get()
 
@@ -104,13 +111,24 @@ def historical_data_view(request):
         return 0
 
     try:
+        # Inicializa o Firebase se não estiver inicializado
         if not firebase_admin._apps:
-            if getattr(settings, 'DEMO_MODE', False):
-                # Retorna histórico simulado em modo demo
-                return Response([
-                    {"label": "10/09/2025 11:00", "timestamp": "2025-09-10 11:00:00", "value": 34.0}
-                ], status=status.HTTP_200_OK)
-            return Response({'error': 'Firebase não configurado. Defina GOOGLE_APPLICATION_CREDENTIALS e FIREBASE_DB_URL no ambiente.'}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+            import os
+            from firebase_admin import credentials
+            
+            # Caminho para o arquivo de credenciais - primeiro tenta no diretório backend
+            cred_path = os.path.join(os.path.dirname(__file__), '..', 'firebase-credentials.json')
+            if not os.path.exists(cred_path):
+                # Se não encontrar, tenta no diretório pai
+                cred_path = os.path.join(os.path.dirname(__file__), '..', '..', 'firebase-credentials.json')
+            
+            if os.path.exists(cred_path):
+                cred = credentials.Certificate(cred_path)
+                firebase_admin.initialize_app(cred, {
+                    'databaseURL': 'https://colmeia-bfabc-default-rtdb.firebaseio.com/'
+                })
+            else:
+                return Response({'error': 'Arquivo de credenciais do Firebase não encontrado.'}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
         ref = db.reference('leituras_esp32')
         firebase_data = ref.get()
 
