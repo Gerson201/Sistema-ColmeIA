@@ -68,7 +68,7 @@ def data_view(request):
                     "leituras_esp32": {
                         "device_001": {
                             "timestamp": "2025-09-10 11:00:00",
-                            "leituras": ["Temp:34;Hum:55;Peso:12.5;Freq:60;Mag:0.8;ID:001"]
+                            "leituras": ["ID:10;TS:2025-09-10 19:45:01;Freq:140.62;Mag:151.23;Temp1:24.5;Hum1:48.0;Peso:-6.79;Temp2:24.4;Hum2:44.3"]
                         }
                     }
                 }, status=status.HTTP_200_OK)

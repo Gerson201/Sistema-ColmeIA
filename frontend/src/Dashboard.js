@@ -42,10 +42,14 @@ const getStatus = (key, value) => {
     if (value === null || value === undefined) return 'good';
     switch (key) {
         case 'Temp':
+        case 'Temp1':
+        case 'Temp2':
             if (value > 40 || value < 10) return 'danger';
             if (value > 36 || value < 15) return 'warning';
             return 'good';
         case 'Hum':
+        case 'Hum1':
+        case 'Hum2':
             if (value > 80 || value < 40) return 'danger';
             if (value > 70 || value < 50) return 'warning';
             return 'good';
@@ -61,6 +65,10 @@ const getStatus = (key, value) => {
 const variableNamesMap = {
     'Temp': 'Temperatura',
     'Hum': 'Umidade',
+    'Temp1': 'Temperatura Interna',
+    'Hum1': 'Umidade Interna',
+    'Temp2': 'Temperatura Externa',
+    'Hum2': 'Umidade Externa',
     'Peso': 'Peso',
     'Freq': 'Frequência',
     'Mag': 'Magnitude Acústica',
@@ -200,10 +208,10 @@ const Dashboard = ({ user, onLogout }) => {
             </div>
             {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
             <div className="dashboard">
-                {renderCard('Temp', 'Temperatura na Colmeia', '°C')}
-                {renderCard('Hum', 'Umidade na Colmeia', '%')}
-                {renderCard('Temp', 'Temperatura Externa', '°C')}
-                {renderCard('Hum', 'Umidade Externa', '%')}
+                {renderCard('Temp1', 'Temperatura Interna', '°C')}
+                {renderCard('Hum1', 'Umidade Interna', '%')}
+                {renderCard('Temp2', 'Temperatura Externa', '°C')}
+                {renderCard('Hum2', 'Umidade Externa', '%')}
                 {renderCard('Peso', 'Peso', 'kg')}
                 {renderCard('Freq', 'Frequência', 'Hz')}
                 {renderCard('Mag', 'Magnitude Acústica', 'dB')}
@@ -227,8 +235,8 @@ const Dashboard = ({ user, onLogout }) => {
                             Bom Estado
                         </h3>
                         <div style={{ fontSize: '1rem', color: '#333' }}>
-                            {['Temp', 'Hum', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'good').length > 0 ? (
-                                ['Temp', 'Hum', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'good').map(variable => (
+                            {['Temp1', 'Hum1', 'Temp2', 'Hum2', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'good').length > 0 ? (
+                                ['Temp1', 'Hum1', 'Temp2', 'Hum2', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'good').map(variable => (
                                     <div key={variable} style={{ marginBottom: '8px', padding: '8px', backgroundColor: '#f8f9fa', borderRadius: '5px' }}>
                                         <strong>{variableNamesMap[variable]}:</strong> {latestReading?.[variable] || '---'}
                                     </div>
@@ -252,8 +260,8 @@ const Dashboard = ({ user, onLogout }) => {
                             Alerta
                         </h3>
                         <div style={{ fontSize: '1rem', color: '#333' }}>
-                            {['Temp', 'Hum', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'warning').length > 0 ? (
-                                ['Temp', 'Hum', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'warning').map(variable => (
+                            {['Temp1', 'Hum1', 'Temp2', 'Hum2', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'warning').length > 0 ? (
+                                ['Temp1', 'Hum1', 'Temp2', 'Hum2', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'warning').map(variable => (
                                     <div key={variable} style={{ marginBottom: '8px', padding: '8px', backgroundColor: '#fff3cd', borderRadius: '5px' }}>
                                         <strong>{variableNamesMap[variable]}:</strong> {latestReading?.[variable] || '---'}
                                     </div>
@@ -277,8 +285,8 @@ const Dashboard = ({ user, onLogout }) => {
                             Perigo
                         </h3>
                         <div style={{ fontSize: '1rem', color: '#333' }}>
-                            {['Temp', 'Hum', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'danger').length > 0 ? (
-                                ['Temp', 'Hum', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'danger').map(variable => (
+                            {['Temp1', 'Hum1', 'Temp2', 'Hum2', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'danger').length > 0 ? (
+                                ['Temp1', 'Hum1', 'Temp2', 'Hum2', 'Peso', 'Freq', 'Mag'].filter(variable => getStatus(variable, latestReading?.[variable]) === 'danger').map(variable => (
                                     <div key={variable} style={{ marginBottom: '8px', padding: '8px', backgroundColor: '#f8d7da', borderRadius: '5px' }}>
                                         <strong>{variableNamesMap[variable]}:</strong> {latestReading?.[variable] || '---'}
                                     </div>
