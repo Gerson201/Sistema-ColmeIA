@@ -145,7 +145,7 @@ if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 else:
     CORS_ALLOW_ALL_ORIGINS = False
-    _cors_env = os.getenv('CORS_ALLOWED_ORIGINS', '')
+    _cors_env = os.getenv('CORS_ALLOWED_ORIGINS', 'https://gerson201.github.io')
     CORS_ALLOWED_ORIGINS = [o for o in _cors_env.split(',') if o]
 
 # Segurança HTTP básica (ajuste conforme necessidade de produção)

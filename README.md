@@ -101,7 +101,7 @@ ID:10;TS:2025-09-10 21:45:20;Freq:1406.25;Mag:154.88;Temp1:25.9;Hum1:44.0;Peso:2
 ## 📱 Acesso
 
 - **Desenvolvimento**: http://localhost:3000
-- **Produção**: https://seu-usuario.github.io/sistema-colmeia
+- **Produção**: https://gerson201.github.io/Sistema-ColmeIA
 
 ## 🔐 Credenciais de Teste
 
