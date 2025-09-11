@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || ' https://sistema-colmeia-backend-246385838672.us-central1.run.app';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://sistema-colmeia-backend-246385838672.us-central1.run.app';
 
 function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState('');
